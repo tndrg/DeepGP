@@ -38,7 +38,8 @@ fieldnames = ['pheno','accuracy','precision','recall', 'specificity','f1','auc',
 
 #%% set parameters
 configs = args_initial()
-configs.data_dir = base_folder+'pukb/genes'
+if configs.data_dir is None:
+    configs.data_dir = base_folder+'pukb/genes'
 print('Running experiment for the whole genome')
 
 #%% construct dataloaders
